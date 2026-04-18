@@ -10,10 +10,8 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-  const humanChoice = prompt(
-    "Enter your choice (rock, paper, or scissoers):",
-  ).toLowerCase();
-  return humanChoice;
+  const humanChoice = prompt("Enter your choice (rock, paper, or scissors):");
+  return humanChoice.toLowerCase();
 }
 
 let humanScore = 0;
@@ -34,3 +32,14 @@ function playRound(humanChoice, computerChoice) {
     return `You lose! ${computerChoice} beats ${humanChoice}`;
   }
 }
+
+function playGame() {
+  for (let i = 0; i < 5; i++) {
+    // const humanChoice = getHumanChoice();
+    // const computerChoice = getHumanChoice();
+    console.log(playRound(getHumanChoice(), getComputerChoice()));
+  }
+  console.log(`Final Score - You: ${humanScore}, Computer: ${computerScore}`);
+}
+
+playGame();
